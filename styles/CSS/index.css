@@ -174,15 +174,28 @@ nav {
 .main-container .section {
   width: 100%;
 }
-.main-container #portfolio .portfolio-container {
+.main-container .main-sections {
+  max-width: 440px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
-.main-container #media .media-container {
+.main-container .main-sections .section {
+  width: 40%;
+}
+.main-container .main-sections #portfolio .portfolio-container {
+  height: 80%;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
 }
-.main-container #media .media-container .media-item {
+.main-container .main-sections #portfolio .portfolio-container a {
+  margin-top: 15px;
+}
+.main-container .main-sections #media .media-container {
+  display: flex;
+  flex-direction: column;
+}
+.main-container .main-sections #media .media-container .media-item {
   display: flex;
   flex-direction: column;
 }
