@@ -5,6 +5,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <script type="text/javascript">
+      // <!--
+        function test(id) {
+          const nonselected = ['summary', 'portfolio', 'media', 'contact'].filter((x) => x !== id);
+          for (let i = 0; i < nonselected.length; i++) {
+            const unused = document.getElementById(nonselected[i]);
+            unused.style.display = 'none';
+          }
+          const selected = document.getElementById(id);
+          selected.style.display = 'block';
+        }
+      //-->
+      </script>
+
     <title>John Spraul</title>
 
     <!-- <link rel="shortcut icon" type="image/png" href="img/favicon.png"/> -->
@@ -17,16 +31,17 @@
   </head>
   <body>
     <div class="main-container">
-      <header class="section">
+      <header class="header">
         <nav>
-          <a href="#summary">Summary</a>
-          <a href="#portfolio">Portfolio</a>
-          <a href="#media">Media</a>
-          <a href="#contact">Contact</a>
+          <a id="nav-Sum" href="#summary" onclick="test('summary')">Summary</a>
+          <a id="nav-Port" href="#portfolio" onclick="test('portfolio')">Portfolio</a>
+          <a id="nav-Med" href="#media" onclick="test('media')">Media</a>
+          <a id="nav-Con" href="#contact" onclick="test('contact')">Contact</a>
         </nav>
       </header>
 
       <div class="main-sections">
+        <h1>John Spraul</h1>
         <!-- Summary -->
         <section class="section" id="summary">
           <h1>Summary</h1>
@@ -75,6 +90,7 @@
               <input type="text" placeholder="Name">
               <input type="text" placeholder="E-mail">
               <input type="text" placeholder="Message">
+              <button>Send</button>
             </form>
           </span>
         </footer>
